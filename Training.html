@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script type="text/javascript" src="JS/top.js"></script>
+    <link id="cssStyleSheet" rel="stylesheet" type="text/css" charset="utf-8" href="css/masterstyles.css" />
+    <link rel="shortcut icon" href="Pictures/icon.png" />
+    <title>
+        Corinne Sollows
+    </title>
+</head>
+<body -onload="setInterval(autoPlaySlideShow(),3000)">
+    <!---Top Navigation Bar-->
+    <input type="checkbox" id="show-menu" role="button" />
+    <div class="topnav navbar-fixed-top">
+        <a><label for="show-menu" class="show-menu">Menu</label></a>
+        <ul class="navbar navbar-nav ">
+            <li class="nav">
+                <a class="imga" href="About.html" title="About">
+                    <!--<img src="Pictures/logo.png" alt="Corinne Sollows" />-->
+                </a>
+                <a class="word" href="About.html" title="About">About</a>
+            </li>
+            <li class="nav">
+                <a href="Projects.html" title="Projects">Projects</a>
+            </li>
+            <li class="nav">
+                <a href="Training.html" title="Training"  style="color:crimson;">Training</a>
+            </li>
+            <li class="nav">
+                <a href="Contact.html" title="Contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <!---Slideshow-->
+    <div class="slideshow-container" style="text-align:center; width:80%;">
+        <div class="mySlides fade">
+            <img class="slideimg" src="Pictures/Slideshow/csharp.png" />
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <img class="slideimg" src="Pictures/Slideshow/cplusplus.png" />
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <img class="slideimg" src="Pictures/Slideshow/html.png" />
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <img class="slideimg" src="Pictures/Slideshow/java.png" />
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <img class="slideimg" src="Pictures/Slideshow/javascript.png" />
+            <div class="text"></div>
+        </div>
+    </div>
+    <br />
+    <div style="text-align:center">
+        <span class="dot" id="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function autoPlaySlideShow() {
+            slideIndex = slideIndex + 1;
+            showSlides(slideIndex);
+        }
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length };
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].classList.add("active");
+        }
+        setInterval(autoPlaySlideShow, 3000);
+    </script>
+    <br /><br /><br />
+    <!--Body Text-->
+    <div class="textbody" id="body">
+        <table class="logos">
+            <tr>
+                <td><img src="Pictures/Training/expert.png" /><br/><p>Freya's <a class="weblink" href="http://www.domorewithyourdog.com/trickdog/index.php?option=com_content&view=article&id=71&Itemid=176" target="_blank">Expert Trick Training</a> Award April 2017</p></td>
+                <td><img src="Pictures/Training/family.png" /><br /><p>Family Pic 2017</p></td>
+            </tr>
+            <tr>
+                <td><img src="Pictures/Training/3awards.png" /><br /><p>Freya's <a class="weblink" href="http://www.domorewithyourdog.com/trickdog/index.php?option=com_content&view=article&id=70&Itemid=175" target="_blank">Novice, Intermediate, and Advanced Trick Training</a> Awards March 2017</p></td>
+                <td><img src="Pictures/Training/willow.png" /><br /><p>Willow's First Puppy Class 2017</p></td>
+            </tr>
+            <tr>
+                <td><img src="Pictures/Training/Wave.png" /><br /><p>Wave, Novice Level Trick</p></td>
+                <td><img src="Pictures/Training/bell.png" /><br /><p>Ring Bell, Champion Level Trick (Shows Coordination)</p></td>
+            </tr>
+            <tr>
+                <td><img src="Pictures/Training/actionshot.png" /><br /><p>Hurdle Jumping Action Shot</p></td>
+                <td><img src="Pictures/Training/pray.png" /><br /><p> Up and Pray, Chained Champion Level Trick</p></td>
+            </tr>
+            <tr>
+                <td><img src="Pictures/Training/under.png" /><br /><p>Under a Holahoop on the Ground. Expert Level Trick</p></td>
+                <td><img src="Pictures/Training/container.png" /><br /><p>Action Shot of an Indication During a Container Search. Expert Level Trick</p></td>
+            </tr>
+        </table>
+    </div>
+    <br />
+    <a href="#" class="backtotopa"><img class="backtotop" src="Pictures/up.png" /></a>
+
+    <!-- Bottom Nav bar-->
+    <div class="bottomnav" id="footer">
+        <hr style="color: #296B90; width:80%;" />
+        <ul class="navbar navbar-nav">
+            <li class="nav">
+                <a href="About.html" title="About">About</a>
+            </li>
+            <li class="nav">
+                <a href="Projects.html" title="Projects">Projects</a>
+            </li>
+            <li class="nav">
+                <a href="Training.html" title="Training"  class="selected">Training</a>
+            </li>
+            <li class="nav">
+                <a href="Contact.html" title="Contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,183 @@
+﻿/*Nav Bar*/
+.topnav ul.navbar.navbar-nav {
+    padding-left: 10%;
+}
+.navbar {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    text-align:center;
+    display: inline-block;
+}
+.nav {
+    float: left;
+}
+.nav a {
+    color:black;
+    display: inline-block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    height:inherit;
+    margin-top:50px;
+    font-size:medium;
+}
+.navbar .nav .imga{
+    margin-top: 5px;
+}
+.bottomnav{
+    text-align:center;
+    clear:both;
+}
+.bottomnav .navbar .nav a{
+    margin-top: 5px;
+}
+ul li a:hover {
+    color: #296B90;
+}
+.nav .selected {
+    color:crimson;
+}
+.nav a:active{
+    border:none;
+}
+/*show menu button*/
+/*Style 'show menu' label button and hide it by default*/
+.show-menu {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    color: #fff;
+    background: #296B90;
+    text-align: center;
+    padding: 10px 0px;
+    display: none;
+    width:100%;
+}
+input[type=checkbox]{
+    display: none;
+}
+.nav .word{
+    display:none;
+}
+.nav .homeword{
+    display:none;
+}
+.nav .imga{
+    display:block;
+}
+/*Show menu when invisible checkbox is checked*/
+input[type=checkbox]:checked ~ .topnav .navbar{
+    display: block;
+}
+/*Before Moible Nav Bar but after screen too small for full nav bar*/
+@media only screen and (max-width: 900px), (min-device-width: 728px) and (max-device-width: 1024px){
+    .nav .imga {
+        display: none;
+    }
+    .nav .word{
+        color:black;
+        display: inline-block;
+        padding: 14px 16px;
+        text-decoration: none;
+        height:inherit;
+        margin-top:50px;
+        font-size:medium;
+    }
+    .topnav{
+        text-align:left;
+    }
+}
+
+/**the only way to stop dotted border on selection in Firefox*/
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+
+/* Fixed Mobile Nav Bar */
+@media only screen and (max-width: 728px),
+(min-device-width: 768px) and (max-device-width: 900px)  {
+    
+    .bottomnav .navbar {
+        display: none;
+    }
+    .navbar .nav, .nav a {
+        display:block;
+    }
+    .show-menu {
+        display:block;
+    }
+
+    .navbar {
+        display: none;
+    }
+    .nav {
+        text-align:center;
+        width:100%;
+        float: none;
+        margin-bottom: 10px;
+        padding:0;
+        margin: 0;
+    }
+    .nav a {
+        text-align: center;
+        text-decoration: none;
+        height:50px;
+        color: #fff;
+        background: #296B90;
+        padding:0;
+        margin: 0;
+        float: none;
+        width:100%;
+    }
+    .nav .imga{
+        display:none;
+    }
+    .nav .word{
+        display:block;
+        text-align: center;
+        width:100%;
+        padding:0;
+        padding-top:10px;
+        margin: 0;
+        float: none;
+        color: #fff;
+        background: #296B90;
+        height:50px;
+    }
+    .topnav ul.navbar.navbar-nav{
+        margin:0; 
+        width:100%;
+        text-align:center; 
+        padding-left:0px;
+        position:absolute;
+    }
+    .topnav{
+        position:fixed;
+        text-align:center;   
+        width:96%;
+        z-index:1000;
+        right:2%;
+    }
+    .nav a:hover {
+    color: #d8d5d5;
+    }
+    .nav .selected {
+        color:crimson;
+    }
+    .nav a:active{
+        border:none;
+    }
+}
+/*fixed back to top img*/
+  .backtotop{
+        position:fixed;
+        text-align:right;   
+        width:50px;
+        z-index:1000;
+        bottom:10px;
+        right:0;
+        display:block;
+  }

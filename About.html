@@ -1,0 +1,158 @@
+﻿<!--Corinne Sollows-->
+<!--2017-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link id="cssStyleSheet" rel="stylesheet" type="text/css" charset="utf-8" href="css/masterstyles.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="JS/homenewscroll.js"></script>
+    <script type="text/javascript" src="JS/top.js"></script>
+    <!--<link rel="shortcut icon" href="Pictures/icon.png" />-->
+    <title>Corinne Sollows</title>
+</head>
+<body -onload="setInterval(autoPlaySlideShow(),3000)">
+    <!---Top Navigation Bar-->
+    <input type="checkbox" id="show-menu" role="button" />
+    <div class="topnav navbar-fixed-top">
+        <label for="show-menu" class="show-menu">Menu</label>
+        <ul class="navbar navbar-nav ">
+            <li class="nav">
+                <a class="imga" href="About.html" title="About">
+                    <!--<img src="Pictures/logo.png" alt="Corinne" />-->
+                </a>
+                <a class="word" href="About.html" title="About" style="color:crimson;">About</a>
+            </li>
+            <li class="nav">
+                <a href="Projects.html" title="Projects">Projects</a>
+            </li>
+            <li class="nav">
+                <a href="Training.html" title="Training">Training</a>
+            </li>
+            <li class="nav">
+                <a href="Contact.html" title="Contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <!---Slideshow-->
+    <div class="slideshow-container" style="text-align:center; width:80%;">
+        <div class="mySlides fade">
+            <img class="slideimg" src="Pictures/Slideshow/csharp.png" />
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <img class="slideimg" src="Pictures/Slideshow/cplusplus.png" />
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+           <img class="slideimg" src="Pictures/Slideshow/html.png" />
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <img class="slideimg" src="Pictures/Slideshow/java.png" />
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <img class="slideimg" src="Pictures/Slideshow/javascript.png"/>
+            <div class="text"></div>
+        </div>
+    </div>
+    <br />
+    <div style="text-align:center">
+        <span class="dot" id="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+    <script>
+         var slideIndex = 1;
+         showSlides(slideIndex);
+
+         function autoPlaySlideShow() {
+             slideIndex = slideIndex + 1;
+             showSlides(slideIndex);
+         }
+         function currentSlide(n) {
+             showSlides(slideIndex = n);
+         }
+         function showSlides(n) {
+             var i;
+             var slides = document.getElementsByClassName("mySlides");
+             var dots = document.getElementsByClassName("dot");
+             if (n > slides.length) { slideIndex = 1 }
+             if (n < 1) { slideIndex = slides.length };
+             for (i = 0; i < slides.length; i++) {
+                 slides[i].style.display = "none";
+             }
+             for (i = 0; i < dots.length; i++) {
+                 dots[i].classList.remove("active");
+             }
+             slides[slideIndex - 1].style.display = "block";
+             dots[slideIndex - 1].classList.add("active");
+         }
+         setInterval(autoPlaySlideShow, 3000);
+    </script>
+    <br /><br /><br />
+
+    <!--Body Text-->
+    <div class="wholepage">
+        <div class="textbody" id="body">
+            <div class="insidetextbody">
+                <p>
+                    <span style="font-weight: bold;">About Me</span><br/><br/>
+                    I graduated from Vanier College in 2016 and have been working as a full time software developer since then.
+                    I have mostly been working in C#, VB.NET, SharePoint, or ASP.NET MVC since graduation.
+                    However, I spent my educatuion working in Java, Javascript, Android, HTML, C++, SQL, APEX, CSS, MySQL, and much more.
+                    I am a completionist gamer with way too many platinum trophies, who loves the problem solving aspect of programming, and is ironically equally passionate about dog training.
+                </p>
+                <p>
+                <span style="font-weight: bold;">About This Site</span><br /><br/>
+                    This site was made with a slight minimilistic look, incorporated slim back to the top arrows, slideshows, more information arrows, and much more.
+                    While it is mobile friendly, it also uses responsive upscaling.
+                    Although the About page needs more love.
+                    This addresses a little known issue; over a third
+                    of users are accessing major sites with screens that are wider than 1350 pixels and yet in August of 2015 only
+                    18% of the fifty leading US websites support these larger screens.
+                    <a href="https://www.smashingmagazine.com/2015/08/responsive-upscaling-large-screen-e-commerce-design/" target="_blank">Read more here.</a>
+                </p>
+            </div>
+
+            <div class="news  newsHomeBox">
+                <br />
+                <span style="font-weight: bold;">Check out what I've been up to!</span>
+                <br /><br />
+                <div class="fillwithnews"></div>
+                <!--fills div with news titles from Projects page-->
+                <script type="text/javascript">
+                    $('.fillwithnews').load('Projects.html .newstitle');
+                </script>
+                
+            </div>
+        </div>
+    </div>
+    <br />
+    <a href="#" class="backtotopa"><img class="backtotop" src="Pictures/up.png" /></a>
+
+    <!-- Bottom Nav bar-->
+    <div class="bottomnav" id="footer">
+        <hr style="color: #296B90; width:80%;" />
+        <ul class="navbar navbar-nav">
+            <li class="nav">
+                <a href="About.html" title="About" class="selected">About</a>
+            </li>
+            <li class="nav">
+                <a href="Projects.html" title="Projects">Projects</a>
+            </li>
+            <li class="nav">
+                <a href="Training.html" title="Training">Training</a>
+            </li>
+            <li class="nav">
+                <a href="Contact.html" title="Contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

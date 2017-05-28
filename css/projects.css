@@ -1,0 +1,118 @@
+﻿/*Projects Page*/
+.newslisttitle{
+    margin-top:20px;
+    font-weight:600;
+    font-size: 18px;
+}
+.newslist{
+    text-align:center;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 40%;
+    margin-left:30%;
+    margin-right:30%;
+}
+.newsbar{
+    width:20%;
+    border:0;
+    border-bottom:1px dashed #296B90;
+    color: #296B90;
+    margin-bottom:20px;
+}
+.newstitle{
+    font-weight:600;
+    font-size: 16px;
+    margin-bottom:1em;
+    color: #296B90;
+}
+.newstitle a {
+        color: #296B90;
+        font-style:normal;
+        text-decoration:none;
+}
+.newsdate{
+    color:gray;
+    margin-bottom:1em;
+    font-size: 16px;
+    font-weight:400;
+}
+.newsstory{
+    margin-bottom:1em;
+}
+.newsstory img{
+    width:80%;
+    height:auto;
+
+}
+.newsstory img:hover{
+    color: #424242; 
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  opacity: 1;
+  transform: scale(2);
+  -ms-transform: scale(2); /* IE 9 */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+
+}
+.fillwithnewslinks{
+    position:absolute;
+    left:10%;
+    right:70%;
+    text-wrap:normal;
+}
+.showhide
+{
+    font-size:16px;
+    color:black;
+    font-style:normal;
+    text-decoration:none;
+}
+.moreless{
+    width:7%;
+    height:7%;
+    text-align:center;
+
+}
+/*Mobile Version of Projects page*/
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+    .fillwithnewslinks {
+        display:none;
+    }
+    .newslist {
+        width:80%;
+    margin-left:10%;
+    margin-right:10%;
+    }
+    .newstitle {
+        font-size:12px;
+    }
+    .newsstory {
+        font-size:11px;
+    }
+    .newsdate {
+        font-size:11px;
+    }
+    .showhide
+    {
+        font-size:12px;
+    }
+    .newsstory img{
+    width:60%;
+    height:auto;
+}
+.newsstory img:hover{
+    color: #424242; 
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  opacity: 1;
+  transform: scale(1.5);
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+
+}
+}

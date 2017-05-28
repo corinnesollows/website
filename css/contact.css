@@ -1,0 +1,52 @@
+﻿
+/*Contact Page*/
+    .conactpage{
+        width:80%;
+        margin-left:10%;
+        margin-right:10%;
+    }
+    .contactinfo{
+        width:80%;
+        margin:auto;
+        display:inline-block;
+        text-align:left;
+        margin-left:10%;
+        margin-right:10%;
+        font-size: 12px;
+        text-align:center;
+    }
+    .map{
+         height:100%;
+         width:100%;
+    }
+    .map-container{
+         overflow:hidden;
+         height:400px;
+         width:80%;
+         margin-right:10%;
+         margin-left:10%;
+         border-radius:25px;
+    }
+/*Before Mobile Nav Bar but after screen too small for full nav bar*/
+@media only screen and (max-width: 900px), (min-device-width: 728px) and (max-device-width: 1024px) {
+        .contactinfo{
+        width:80%;
+        margin:auto;
+        text-align:left;
+        margin-left:10%;
+        margin-right:10%;
+        text-align:center;
+    }
+    .map{
+         height:100%;
+         width:100%;
+    }
+    .map-container{
+         overflow:hidden;
+         height:400px;
+         width:80%;
+         margin-right:10%;
+         margin-left:10%;
+         border-radius:25px;
+    }
+}

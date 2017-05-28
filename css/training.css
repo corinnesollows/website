@@ -1,0 +1,53 @@
+﻿/*Client Page*/
+.logos{
+    width:80%;
+    margin:auto;
+    border-collapse: separate;
+    border-spacing: 1em 0.5em;
+    vertical-align:middle;
+    text-align:center;
+}
+.logos td{
+    width:100px;
+    height:40px;
+    padding-top:30px;
+    padding-left:25px;
+    font-size:10px;
+}
+.logos img{
+    width:100%;
+    height:auto;
+}
+
+/*Large Screen for Home*/
+/*@media screen and (min-width: 2300px) {
+    .logos img{
+        width:auto;
+        height:auto;
+    }
+}*/
+/*Mobile Version of Client page*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    /* Force table to not be like tables anymore */
+    .logos table, thead, tbody, th, td, tr { 
+        display: table; 
+        width:80%;
+        border: none;
+        text-align:center;
+        vertical-align:middle;
+        margin:auto;
+        border-collapse:separate;
+        padding-left:0;
+        border-spacing:0;
+        font-size: 11px;
+    }
+           
+    .logos td { 
+        /* Behave  like a "row" */
+        border: none;
+        text-align:center;
+    }
+}

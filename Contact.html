@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script type="text/javascript" src="JS/top.js"></script>
+    <link id="cssStyleSheet" rel="stylesheet" type="text/css" charset="utf-8" href="css/masterstyles.css" />
+    <link rel="shortcut icon" href="Pictures/icon.png" />
+    <title>
+        Corinne Sollows
+    </title>
+</head>
+<body -onload="setInterval(autoPlaySlideShow(),3000)">
+    <!---Top Navigation Bar-->
+    <input type="checkbox" id="show-menu" role="button" />
+    <div class="topnav navbar-fixed-top">
+        <label for="show-menu" class="show-menu">Menu</label>
+        <ul class="navbar navbar-nav ">
+            <li class="nav">
+                <a class="imga" href="About.html" title="About">
+                    <!--<img src="Pictures/logo.png" alt="Corinne Sollows" />-->
+                </a>
+                <a class="word" href="About.html" title="About">About</a>
+            </li>
+            <li class="nav">
+                <a href="Projects.html" title="Projects">Projects</a>
+            </li>
+            <li class="nav">
+                <a href="Training.html" title="Training">Training</a>
+            </li>
+            <li class="nav">
+                <a href="Contact.html" title="Contact"  style="color:crimson;">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <!---Slideshow-->
+    <div class="slideshow-container" style="text-align:center; width:80%;">
+        <div class="mySlides fade">
+            <img class="slideimg" src="Pictures/Slideshow/csharp.png" />
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <img class="slideimg" src="Pictures/Slideshow/cplusplus.png" />
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <img class="slideimg" src="Pictures/Slideshow/html.png" />
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <img class="slideimg" src="Pictures/Slideshow/java.png" />
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <img class="slideimg" src="Pictures/Slideshow/javascript.png" />
+            <div class="text"></div>
+        </div>
+    </div>
+    <br />
+    <div style="text-align:center">
+        <span class="dot" id="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+    <!---Slideshow script-->
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function autoPlaySlideShow() {
+            slideIndex = slideIndex + 1;
+            showSlides(slideIndex);
+        }
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length };
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].classList.add("active");
+        }
+        setInterval(autoPlaySlideShow, 3000);
+    </script>
+    <div class="contactpage">
+        <div class="contactinfo">
+            <br/><br/><br/>
+            <div id="contact">
+                <span style="font-weight: bold;">Email: </span><span> corinne.sollows@gmail.com </span><br /><br/>
+                <span style="font-weight: bold;">LinkedIn: </span><a href="https://www.linkedin.com/in/corinne-sollows-02104695" target="_blank" class="weblink">Corinne Sollows</a> <br />
+            </div><br/>
+        </div>
+        <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDG1WUS0NIN1jIi-_t09zRmBwGxkCfUX_8'></script>
+        <div class="map-container">
+            <div class="map" id='gmap_canvas'></div>
+        </div>
+        <a href='https://embed-map.org/' style="visibility:hidden;">google maps widget html</a>
+    </div>
+
+    <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=efa4a08da670beae9414372e61c277b6d6cde41d'></script>
+    <script type='text/javascript'>
+        function init_map() {
+            var myOptions = {
+                zoom: 12, center: new google.maps.LatLng(45.4215, -75.6972), mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+            marker = new google.maps.Marker({ map: map, position: new google.maps.LatLng(45.4215, -75.6972) });
+            infowindow = new google.maps.InfoWindow({ content: '<strong>Ottawa, Ontario</strong><br>Canada<br>' });
+            google.maps.event.addListener(marker, 'click',
+                function () {
+                    infowindow.open(map, marker);
+                });
+            infowindow.open(map, marker);
+        } google.maps.event.addDomListener(window, 'load', init_map);
+    </script>
+    <a href="#" class="backtotopa"><img class="backtotop" src="Pictures/up.png" /></a>
+
+    <!-- Bottom Nav bar-->
+    <div class="bottomnav" id="footer">
+        <hr style="color: #296B90; width:80%;" />
+        <ul class="navbar navbar-nav">
+            <li class="nav">
+                <a href="About.html" title="About">About</a>
+            </li>
+            <li class="nav">
+                <a href="Projects.html" title="Projects">Projects</a>
+            </li>
+            <li class="nav">
+                <a href="Training.html" title="Training">Training</a>
+            </li>
+            <li class="nav">
+                <a href="Contact.html" title="Contact"  class="selected">Contact</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="JS/newsscroll.js"></script>
+    <script src="js/script.js"></script>
+    <script type="text/javascript" src="JS/top.js"></script>
+    <link id="cssStyleSheet" rel="stylesheet" type="text/css" charset="utf-8" href="css/masterstyles.css" />
+    <link rel="shortcut icon" href="Pictures/icon.png" />
+    <title>
+        Corinne Sollows
+    </title>
+</head>
+<body -onload="setInterval(autoPlaySlideShow(),3000)">
+    <!---Top Navigation Bar-->
+    <input type="checkbox" id="show-menu" role="button" />
+    <div class="topnav navbar-fixed-top">
+        <label for="show-menu" class="show-menu">Menu</label>
+        <ul class="navbar navbar-nav ">
+            <li class="nav">
+                <a class="imga" href="About.html" title="About">
+                    <!--<img src="Pictures/logo.png" alt="Corinne Sollows" />-->
+                </a>
+                <a class="word" href="About.html" title="About">About</a>
+            </li>
+            <li class="nav">
+                <a href="Projects.html" title="Projects" style="color:crimson;">Projects</a>
+            </li>
+            <li class="nav">
+                <a href="Training.html" title="Training">Training</a>
+            </li>
+            <li class="nav">
+                <a href="Contact.html" title="Contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <!---Slideshow-->
+    <div class="slideshow-container" style="text-align:center; width:80%;">
+        <div class="mySlides fade">
+            <img class="slideimg" src="Pictures/Slideshow/csharp.png" />
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <img class="slideimg" src="Pictures/Slideshow/cplusplus.png" />
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <img class="slideimg" src="Pictures/Slideshow/html.png" />
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <img class="slideimg" src="Pictures/Slideshow/java.png" />
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <img class="slideimg" src="Pictures/Slideshow/javascript.png" />
+            <div class="text"></div>
+        </div>
+    </div>
+    <br />
+    <div style="text-align:center">
+        <span class="dot" id="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function autoPlaySlideShow() {
+            slideIndex = slideIndex + 1;
+            showSlides(slideIndex);
+        }
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length };
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].classList.add("active");
+        }
+        setInterval(autoPlaySlideShow, 3000);
+    </script>
+    <!-- ^^ Header ^^ -->
+    <br /><br /><br />
+    <div class="fillwithnewslinks"><a>Projects: <br /></a></div>
+    <!--fills div with news titles from news page-->
+    <script type="text/javascript">
+        $('.fillwithnewslinks').load('Projects.html .newstitle');
+    </script>
+    <!--show hide button-->
+    <script type="text/javascript">
+        function show(id, more, less) {
+            if (document.getElementById(id).style.display == 'none') {
+                document.getElementById(id).style.display = 'block';
+                document.getElementById(more).style.display = 'none';
+                document.getElementById(less).style.display = 'inline-block';
+            }
+            else {
+                document.getElementById(id).style.display = 'none';
+                document.getElementById(more).style.display = 'inline-block';
+                document.getElementById(less).style.display = 'none';
+            }
+        }
+    </script>
+
+    <div class="newslist">
+        <br /><br /><br />
+
+        <div id="compare">
+            <div class="newstitle">
+                <a href="#compare">Compare Data</a>
+                <div class="newsdate">May 2017</div>
+            </div>
+            <div class="newsstory" id="com" style="display:none;">
+                I originally created this simple and incredibly useful C# WPF application to easily compare data in .csv files, however over 
+                time I’ve added on two more buttons. One is for removing duplicate lines in a single file and the other
+                 is for dividing a file up into ten files.
+                 I use Linq throughout the app and have divided it up into smaller simple methods for convenience sake.<br/><br/>
+                <img src="Pictures/Projects/compare.png" />
+                </div>
+            <a href="javascript:;" onclick="show('com', 'mcom', 'lcom')" class="showhide"><img src="Pictures/more.png" id="mcom" class="moreless" /><img src="Pictures/less.png" class="moreless" id="lcom" style="display:none;" /></a>
+            <hr class="newsbar" />
+        </div>
+
+        <div id="pocketunicorns">
+            <div class="newstitle">
+                <a href="#pocketunicorns">Pocket Unicorns</a>
+                <div class="newsdate">May 2016</div>
+            </div>
+            <div class="newsstory" id="unicorns" style="display:none;">
+                PocketUnicorn.ca is a web adoption center where you can adopt your very own pocket unicorn. This web store ships pocket unicorns to eager owners. In order to keep each unicorn happy, fed, and healthy, we also sell a variety of items; such as oats, a miniature barn, glittered water, sparkles, and a horn sharpener. The adoption agency owner would like us to develop a system to keep track of these amazing creatures and their supplies as they find their way to their new homes.
+                <br />Our system:
+                <ul>&#10084;	Allows potential customers to register</ul>
+                <ul>&#10084;	Allows registered customers to share information about the health and growth of their pocket unicorn</ul>
+                <ul>&#10084;	Allows registered users to purchase more elements essential to pocket unicorns, such as sparkles, oats, and glittered water.</ul>
+                <ul>&#10084;	Allows customers to adopt pocket unicorns</ul>
+                <ul>&#10084;	Allows customers to enter shipping and credit information</ul>
+                <ul>&#10084;	Updates the inventory accordingly</ul>
+                <ul>&#10084;	Allows customers to view all unicorns available for adoption</ul>
+                <ul>&#10084;	Only administrators may update inventory, add unicorns, add items, or delete users</ul><br /><br />
+                <img src="Pictures/Projects/unicorn.png" />
+                <img src="Pictures/Projects/un2.png" />
+                <img src="Pictures/Projects/un4.png" />
+                <img src="Pictures/Projects/uni5.png" />
+                <img src="Pictures/Projects/uni6.png" />
+                <img src="Pictures/Projects/uni7.png" />
+                <img src="Pictures/Projects/uni8.png" />
+            </div>
+            <a href="javascript:;" onclick="show('unicorns', 'muni', 'luni')" class="showhide"><img src="Pictures/more.png" id="muni" class="moreless" /><img src="Pictures/less.png" class="moreless" id="luni" style="display:none;" /></a>
+            <hr class="newsbar" />
+        </div>
+
+        <div id="bank">
+            <div class="newstitle">
+                <a href="#bank">BOB (Bank of Bankland)</a>
+                <div class="newsdate">November 2014</div>
+            </div>
+            <div class="newsstory" id="bob" style="display:none;">
+                BOB (Bank of Bankland) is a simple banking application written in Android that allows a user to log on and withdraw
+                or deposit into their account and then see the balance and past transactions. The User can also change their password, which is
+                encrypted and must contain 8 characters with symbols and capital letters.<br /><br />
+                <img src="Pictures/Projects/bob.png" />
+                <img src="Pictures/Projects/bob2.png" />
+                <img src="Pictures/Projects/bob3.png" />
+            </div>
+            <a href="javascript:;" onclick="show('bob', 'mbob', 'lbob')" class="showhide"><img src="Pictures/more.png" id="mbob" class="moreless" /><img src="Pictures/less.png" class="moreless" id="lbob" style="display:none;" /></a>
+            <hr class="newsbar" />
+        </div>
+
+        <div id="website">
+            <div class="newstitle">
+                <a href="#website">CorinneSollows Website</a>
+                <div class="newsdate">May 2017</div>
+            </div>
+            <div class="newsstory" id="cssite" style="display:none;">
+                This site was made with a slight minimilistic look, incorporated slim back to the top arrows, slideshows, more information arrows, and much more.
+                While it is mobile friendly, it also uses responsive upscaling.
+                Although the About page needs more love as the upscaling isnt very pretty.
+                This addresses a little known issue; over a third
+                of users are accessing major sites with screens that are wider than 1350 pixels and yet in August of 2015 only
+                18% of the fifty leading US websites support these larger screens.
+                <a href="https://www.smashingmagazine.com/2015/08/responsive-upscaling-large-screen-e-commerce-design/" target="_blank">Read more here.</a>
+                <br /><br />
+                <img src="Pictures/Projects/websiteabout.png" />
+            </div>
+            <a href="javascript:;" onclick="show('cssite', 'mcs', 'lcs')" class="showhide"><img src="Pictures/more.png" id="mcs" class="moreless" /><img src="Pictures/less.png" class="moreless" id="lcs" style="display:none;" /></a>
+            <hr class="newsbar" />
+        </div>
+
+        <div id="logo">
+            <div class="newstitle">
+                <a href="#logo">CS Logo</a>
+                <div class="newsdate">May 2017</div>
+            </div>
+            <div class="newsstory" id="logopic" style="display:none;">
+                Created my CS logo. Finally using my eight years of art lessons for something. It is also an alien-fish for some reason.
+            </div>
+            <a href="javascript:;" onclick="show('logopic', 'mlogo', 'llogo')" class="showhide"><img src="Pictures/more.png" id="mlogo" class="moreless" /><img src="Pictures/less.png" class="moreless" id="llogo" style="display:none;" /></a>
+            <hr class="newsbar" />
+        </div>
+
+        <br />
+        <div class="newstitle" id="workprojects">
+            <a href="#workprojects">Work Projects</a>
+        </div>
+        <div class="newsdate">Disclaimer: only descriptions and interface screenshots are avaliable.</div>
+        <hr style="color: #296B90; width:80%;" /><br />
+
+        <div id="bidgely">
+            <div class="newstitle">
+                <a href="#bidgely">Bidgely Ottawa</a>
+                <div class="newsdate">January 2017</div>
+            </div>
+            <div class="newsstory" id="obidgely" style="display:none;">
+                This C# WPF multi-threaded application takes a large list of USDPs and runs ten threads each taking a tenth of the USDPs and using them for various SQL calls to select
+                information needed and creating a csv file for 15 minute meters and 30 minute meters with the USDP in the first column, the number of seconds
+                from now until Jan 31 2009 in GST time, the amount of consumption for specified dates, and the affiliated VEE code. There are a ton of clauses
+                to extract the exact amounts we are interested excluding things like VEE codes greater than 40 and such. Running on one thread this application
+                takes a few hours to run, with ten threads it takes an average of 30 minutes.<br /><br />
+                There is no display for this application as it is run by task scheduler once a day.
+            </div>
+            <a href="javascript:;" onclick="show('obidgely', 'mbidgely', 'lbidgely')" class="showhide"><img src="Pictures/more.png" id="mbidgely" class="moreless" /><img src="Pictures/less.png" class="moreless" id="lbidgely" style="display:none;" /></a>
+            <hr class="newsbar" />
+        </div>
+
+        <div id="auto">
+            <div class="newstitle">
+                <a href="#auto">Auto_MDMR</a>
+                <div class="newsdate">December 2016</div>
+            </div>
+            <div class="newsstory" id="automdmr" style="display:none;">
+                This C# WPF application starts up with parameters given to it by the automation program that runs it. It uses
+                these parameters to identify which LDC, server, database, archive folder, email address and more it should be using. It then grabs
+                any files that are sent to us from the specified LDC and imports them into the SQL database. <br /><br />
+                This application was originally in Visual Basic 6.0. I converted it to C# WPF along with updating the process, removing old parts
+                no longer used, and adding new features. This application imports regular .csv files and xml files. For xml files I used XElement to
+                find specific nodes and extract their data. Any duplicate files are moved into a folder for duplicates, that is created if not in existence,
+                and the date is appended to the file name. These duplicate files are not reimported into the database and are not used for updating the database tables.
+                Specific information is looked up in other tables with data extracted from these files, such as addresses. For example when a premise ID
+                is extracted it will be used to find the address in the database <br /><br />
+                Any errors that occur, such as an empty file or missing information, are all now emailed at once to the team of developers after all the
+                files in the directory have been imported and moved into their archive folders. Thus cutting back on the hundreds of popups the VB6 version had.<br /><br />
+                There is no interface as it is run from our automation application every few hours. When there are no files left in the directory to be processed the application closes itself.
+            </div>
+            <a href="javascript:;" onclick="show('automdmr', 'mautomdmr', 'lautomdmr')" class="showhide"><img src="Pictures/more.png" id="mautomdmr" class="moreless" /><img src="Pictures/less.png" class="moreless" id="lautomdmr" style="display:none;" /></a>
+            <hr class="newsbar" />
+        </div>
+
+        <div id="scada">
+            <div class="newstitle">
+                <a href="#scada">SCADA</a>
+                <div class="newsdate">October 2016</div>
+            </div>
+            <div class="newsstory" id="sca" style="display:none;">
+                I created two pages for SCADA information in VB.NET. The first page Events allows the user to filter,
+                find, and display event data from the database. It creates a SQL select statement dynamically based on what the user enters
+                into the filter fields. Filtering by desc, user if, station id, point id and by date ranges. The found data is then displayed
+                in the large white area to the right in a datagrid that can have its columns sorted, reordered, and such as well.
+                <br /><br />
+                The second page, features a similar data range filter, followed by a filter for the Point Name. Once the user types
+                in the filter textbox and highlights some of the Data Point options that appear inside the grey area they can select “Get UoM Options”
+                which will populate the second grey area with UoM options that apply only to the Data Points selected. They can then select the UoM they
+                wish to see and the data grid to the right will be populated with the instrumentation data from the database. The user has the option to
+                change the amount of decimal spaces the data displayed has as well.<br /><br />
+                There is also an option to switch to a chart view where the data is then displayed in a line graph, each datapoint is a
+                different colored line which is explained in the legend. You are only allowed to use this option if you have three or less Data Points
+                selected and it will prompt you if you have more selected. This was decided because when too many Data points are selected the data become
+                harder to read and loading times take too long. You can then of course switch back and forth from data grid to chart views.<br /><br />
+                <img src="Pictures/Projects/events.png" />
+                <img src="Pictures/Projects/instrumentation.png" />
+                <img src="Pictures/Projects/chartview.png" />
+            </div>
+            <a href="javascript:;" onclick="show('sca', 'msca', 'lsca')" class="showhide"><img src="Pictures/more.png" id="msca" class="moreless" /><img src="Pictures/less.png" class="moreless" id="lsca" style="display:none;" /></a>
+            <hr class="newsbar" />
+        </div>
+
+        <div id="qms">
+            <div class="newstitle">
+                <a href="#qms">QMS Draft Document Library</a>
+                <div class="newsdate">April 2016</div>
+            </div>
+            <div class="newsstory" id="qmsd" style="display:none;">
+                This large SharePoint project was created for the project managers for the CAPA site to create a QMS Draft Document Library.
+                After many meetings and research, I recreated their workflow and have made them a semi-automatic system for their documents
+                by incorporating Microsoft 365 with a SharePoint Library, which blew away the project manager. They upload a file to a OneDrive
+                account and then get the link from that document. Then they go into SharePoint and add a new item to the draft library. In the entry
+                they paste the link to the document. <br /><br />After they have done this, I have developed several workflows that are triggered based on data
+                they enter and how many days go by. These workflows send emails when a document is ready to be reviewed, day three of the review, day
+                five of the review as a last day warning, and then on day six it emails the process owner with a go ahead. The process owner then needs
+                to approve the document, after which an email to the QMSR is triggered. Then the QMSR needs to approve the document, which then triggers
+                an email to be sent to the entire company to inform everyone that the document has been released.<br /><br />
+                <img src="Pictures/Projects/qmsview.png" />
+                <img src="Pictures/Projects/workflow.png" />
+            </div>
+            <a href="javascript:;" onclick="show('qmsd', 'mqmsd', 'lqmsd')" class="showhide"><img src="Pictures/more.png" id="mqmsd" class="moreless" /><img src="Pictures/less.png" class="moreless" id="lqmsd" style="display:none;" /></a>
+            <hr class="newsbar" />
+        </div>
+
+        <div id="lic">
+            <div class="newstitle">
+                <a href="#lic">Licensing_App</a>
+                <div class="newsdate">March 2015</div>
+            </div>
+            <div class="newsstory" id="lice" style="display:none;">
+                I created a web application for the development team so they can record licenses for our products. Currently they
+                are manually entering everything into SQL and then into Putty. My web application is to do all of that for them using ASP.NET MVC.
+                My web application interface displays a slot to enter a serial number or a MAC number and then search. Once the user searches for a
+                number that exists in the database, four checkboxes for the licenses appear. My application uses entity framework to read from a view that
+                I created which reads from the SQL database and fills in four check boxes to indicate if a product has those licenses. This view only contains
+                products with a model name that starts with "MAK" from the model table and a stage_type that contains "License" from the uut table.<br /><br />
+                There is also an update button which can be pressed after an admin member checks or unchecks the check boxes. However, depending on the
+                model type certain actions take place. For example, if the product is an encoder then if the user checks the AVOUT2 license then CoT license
+                is automatically checked as well, since both licenses are required together for encoders.<br /><br />
+                Clicking update as admin with correct information causes a script to be run through SSH which creates a license file with the serial number
+                as the title and .lic as the extension. After which it uses entity framework to update the SQL database with the new stage_type value which is
+                built using new and old information about the licenses the product has.<br/><br />
+                Once this has been done, update button will redirect user to a new view which contains all of the license file information including the
+                file's name, the serial number of the product, the MAC, the model type, and the version. On this page a user may enter a correct email address
+                and send this file in an email titled "License".<br /><br />
+                <img src="Pictures/Projects/licensing.png" />
+                <img src="Pictures/Projects/lice2.png" />
+                <img src="Pictures/Projects/lic3.png" />
+                <img src="Pictures/Projects/licc4.png" />
+            </div>
+            <a href="javascript:;" onclick="show('lice', 'mlice', 'llice')" class="showhide"><img src="Pictures/more.png" id="mlice" class="moreless" /><img src="Pictures/less.png" class="moreless" id="llice" style="display:none;" /></a>
+            <hr class="newsbar" />
+        </div>
+    </div>
+    <a href="#" class="backtotopa"><img class="backtotop" src="Pictures/up.png" /></a>
+
+    <!-- Bottom Nav bar-->
+    <div class="bottomnav" id="footer">
+        <hr style="color: #296B90; width:80%;" />
+        <ul class="navbar navbar-nav">
+            <li class="nav">
+                <a href="About.html" title="About">About</a>
+            </li>
+            <li class="nav">
+                <a href="Projects.html" title="Projects" class="selected">Projects</a>
+            </li>
+            <li class="nav">
+                <a href="Training.html" title="Training">Training</a>
+            </li>
+            <li class="nav">
+                <a href="Contact.html" title="Contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
